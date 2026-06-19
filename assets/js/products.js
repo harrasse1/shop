@@ -335,7 +335,7 @@ const PRODUCTS = [
     cat: 'weight',
     catName: 'التخسيس والريجيم',
     desc: 'برنامج 9 أيام لإعادة ضبط الجسم — نتائج ملحوظة وانطلاقة جديدة.',
-    price: 999, oldPrice: 1199,
+    price: 1500, oldPrice: 1799,
     icon: 'fa-box',
     color: '#1a6b4e',
     rating: 5, badge: 'best',
