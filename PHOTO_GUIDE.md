@@ -10,7 +10,7 @@
 
 ---
 
-## 📋 قائمة الأسماء (42 منتج)
+## 📋 قائمة الأسماء (43 منتج)
 
 ### 🏷️ مشروبات الصبار
 
@@ -65,7 +65,8 @@
 | Forever Therm | `forever-therm.webp` |
 | Forever Fiber | `forever-fiber.webp` |
 | Forever Garcinia Plus | `garcinia-plus.webp` |
-| برنامج Vital 5 | `c9-program.webp` |
+| برنامج Clean 9 (C9) | `c9-program.webp` |
+| برنامج Vital 5 | `vital5.webp` |
 
 ### 🏷️ العناية الشخصية
 
