@@ -139,6 +139,18 @@ const PRODUCTS = [
     rating: 5,
   },
   {
+    id: 'forever-immublend',
+    image: 'assets/images/forever-immublend.webp',
+    name: 'Forever ImmuBlend',
+    cat: 'nutrition',
+    catName: 'المكملات الغذائية',
+    desc: 'تركيبة قوية من فيتامين C والزنك ومستخلصات طبيعية — لتعزيز جهاز المناعة.',
+    price: 289, oldPrice: 339,
+    icon: 'fa-shield-virus',
+    color: '#f57c00',
+    rating: 5, badge: 'new',
+  },
+  {
     id: 'forever-bee-pollen',
     image: 'assets/images/forever-bee-pollen.webp',
     name: 'Forever Bee Pollen',
@@ -296,6 +308,30 @@ const PRODUCTS = [
     color: '#c89a3a',
     rating: 5, badge: 'best',
   },
+  {
+    id: 'aloe-lips',
+    image: 'assets/images/aloe-lips.webp',
+    name: 'Aloe Lips',
+    cat: 'skincare',
+    catName: 'العناية بالبشرة',
+    desc: 'مرطب الشفاه بالصبار وزبدة الجوجوبا — لشفاه ناعمة ومحمية طوال اليوم.',
+    price: 99, oldPrice: 119,
+    icon: 'fa-kiss',
+    color: '#e91e63',
+    rating: 5, badge: 'new',
+  },
+  {
+    id: 'aloe-face-body-creme',
+    image: 'assets/images/aloe-face-body-creme.webp',
+    name: 'كريم الصبار للوجه والجسم',
+    cat: 'skincare',
+    catName: 'العناية بالبشرة',
+    desc: 'كريم مرطب بالصبار للوجه والجسم — ترطيب عميق ونعومة فائقة.',
+    price: 249, oldPrice: 289,
+    icon: 'fa-jar',
+    color: '#a8d5ba',
+    rating: 5, badge: 'new',
+  },
 
   /* ============== التخسيس والريجيم (WEIGHT) ============== */
   {
@@ -381,6 +417,18 @@ const PRODUCTS = [
     icon: 'fa-box',
     color: '#d4af37',
     rating: 5,
+  },
+  {
+    id: 'forever-lean',
+    image: 'assets/images/forever-lean.webp',
+    name: 'Forever Lean',
+    cat: 'weight',
+    catName: 'التخسيس والريجيم',
+    desc: 'مكمل قوي يقلل امتصاص الدهون والكربوهيدرات — لإدارة الوزن بفعالية.',
+    price: 399, oldPrice: 459,
+    icon: 'fa-weight-scale',
+    color: '#0277bd',
+    rating: 5, badge: 'new',
   },
 
   /* ============== العناية الشخصية (PERSONAL) ============== */
@@ -503,6 +551,18 @@ const PRODUCTS = [
     icon: 'fa-jar',
     color: '#ef6c00',
     rating: 5,
+  },
+  {
+    id: 'aloe-deodorant',
+    image: 'assets/images/aloe-deodorant.webp',
+    name: 'Aloe Ever-Shield Deodorant',
+    cat: 'personal',
+    catName: 'العناية الشخصية',
+    desc: 'مزيل العرق بالصبار خالٍ من الألمنيوم — حماية طويلة الأمد بلطف.',
+    price: 119, oldPrice: 149,
+    icon: 'fa-spray-can',
+    color: '#26a69a',
+    rating: 5, badge: 'new',
   },
 
   /* ============== العطور (PERFUMES) ============== */
