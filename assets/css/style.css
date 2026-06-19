@@ -148,16 +148,6 @@ h1,h2,h3,h4 { font-family: var(--font-display); line-height: 1.25; }
 .header__inner { display: flex; align-items: center; gap: 24px; padding: 14px 0; }
 
 .logo { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; }
-.logo__img {
-  width: 56px;
-  height: 56px;
-  object-fit: contain;
-  display: block;
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  background: #0a0a0a;
-  padding: 4px;
-}
 .logo__mark {
   width: 46px; height: 46px;
   display: inline-flex; align-items: center; justify-content: center;
@@ -268,18 +258,6 @@ h1,h2,h3,h4 { font-family: var(--font-display); line-height: 1.25; }
   font-size: 13px;
   font-weight: 700;
   margin-bottom: 24px;
-}
-.hero__brand {
-  margin-bottom: 24px;
-  display: inline-block;
-}
-.hero__brand-logo {
-  max-width: 280px;
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(0,0,0,.25);
-  border: 1px solid rgba(212,175,55,.2);
 }
 .hero__title {
   font-size: clamp(36px, 5.5vw, 64px);
