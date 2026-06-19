@@ -537,7 +537,7 @@ h1,h2,h3,h4 { font-family: var(--font-display); line-height: 1.25; }
   width: 100%;
   height: 100%;
   object-fit: contain;
-  padding: 14px;
+  padding: 32px 14px 14px 14px;
   z-index: 1;
   position: relative;
   transition: transform var(--transition);
@@ -570,18 +570,25 @@ h1,h2,h3,h4 { font-family: var(--font-display); line-height: 1.25; }
 
 .product__badge {
   position: absolute;
-  top: 14px; right: 14px;
+  top: 10px; right: 10px;
   background: var(--danger);
   color: #fff;
   padding: 5px 12px;
   border-radius: 999px;
   font-size: 11px;
   font-weight: 800;
-  z-index: 2;
+  z-index: 5;
   letter-spacing: .5px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.18);
+  white-space: nowrap;
+  max-width: calc(100% - 20px);
 }
 .product__badge--new { background: var(--green-500); }
-.product__badge--best { background: linear-gradient(135deg, var(--gold-400), var(--gold-700)); color: var(--green-900); }
+.product__badge--best { 
+  background: linear-gradient(135deg, var(--gold-400), var(--gold-700)); 
+  color: var(--green-900); 
+  border: 1px solid rgba(255,255,255,.4);
+}
 
 .product__body {
   padding: 22px;
@@ -1145,6 +1152,14 @@ h1,h2,h3,h4 { font-family: var(--font-display); line-height: 1.25; }
   .products { grid-template-columns: 1fr 1fr; gap: 14px; }
   .product__img { height: 140px; }
   .product__img i { font-size: 56px; }
+  .product__img img { padding: 26px 8px 8px 8px; }
+  .product__badge { 
+    font-size: 9px; 
+    padding: 3px 8px; 
+    top: 8px; 
+    right: 8px; 
+    letter-spacing: 0;
+  }
   .product__body { padding: 14px; }
   .product__name { font-size: 14px; min-height: 38px; }
   .product__desc { display: none; }
