@@ -560,5 +560,11 @@
   <!-- Scripts -->
   <script src="assets/js/products.js?v=20"></script>
   <script src="assets/js/app.js?v=20"></script>
+  <script>
+    // Register Service Worker for PWA install prompt
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js').catch(() => {});
+    }
+  </script>
 </body>
 </html>
