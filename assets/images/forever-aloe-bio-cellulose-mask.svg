@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fafbfa"/>
+      <stop offset="100%" stop-color="#eef2ee"/>
+    </linearGradient>
+    <linearGradient id="prod" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b8d8c8"/>
+      <stop offset="100%" stop-color="#81978c"/>
+    </linearGradient>
+    <linearGradient id="prodDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9cb8aa"/>
+      <stop offset="100%" stop-color="#65776e"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="8"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.25"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <ellipse cx="200" cy="370" rx="100" ry="10" fill="#000" opacity="0.12"/>
+  <g filter="url(#shadow)">
+    <polygon points="280,90 320,70 320,310 280,330" fill="url(#prodDark)"/>
+    <polygon points="120,90 280,90 320,70 160,70" fill="#93ada0"/>
+    <rect x="120" y="90" width="160" height="240" fill="url(#prod)"/>
+    <rect x="135" y="110" width="130" height="2" fill="#1a6b4e" opacity="0.7"/>
+    <text x="200" y="140" text-anchor="middle" fill="#1a6b4e" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2">FOREVER</text>
+    <text x="200" y="155" text-anchor="middle" fill="#1a6b4e" font-family="Arial,sans-serif" font-size="9" letter-spacing="3" opacity="0.85">LIVING</text>
+    <line x1="160" y1="170" x2="240" y2="170" stroke="#1a6b4e" stroke-width="0.5" opacity="0.5"/>
+    <text x="200" y="225" text-anchor="middle" fill="#1a6b4e" font-family="Georgia,serif" font-size="28" font-weight="900">BIO-CELLULOSE</text>
+    <text x="200" y="255" text-anchor="middle" fill="#1a6b4e" font-family="Georgia,serif" font-size="14" font-style="italic" opacity="0.95">Mask</text>
+    <rect x="135" y="310" width="130" height="2" fill="#1a6b4e" opacity="0.7"/>
+  </g>
+</svg>
