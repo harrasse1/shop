@@ -21,6 +21,7 @@
   let activeCat = 'all';
   let searchTerm = '';
   let sortBy = 'default';
+  let activeQuickFilter = 'all';
 
   function loadCart() {
     try {
@@ -142,6 +143,16 @@
     let list = [...window.PRODUCTS];
 
     if (activeCat !== 'all') list = list.filter((p) => p.cat === activeCat);
+
+    // Apply quick filter
+    if (activeQuickFilter === 'best') {
+      list = list.filter((p) => p.badge === 'best');
+    } else if (activeQuickFilter === 'new') {
+      list = list.filter((p) => p.badge === 'new');
+    } else if (activeQuickFilter === 'discount') {
+      list = list.filter((p) => p.oldPrice && p.oldPrice > p.price);
+    }
+
     if (searchTerm) {
       const q = searchTerm.trim().toLowerCase();
       list = list.filter((p) =>
@@ -318,6 +329,57 @@
       renderProducts();
     });
   }
+
+  // ====== QUICK FILTERS ======
+  $$('.quick-filter').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      $$('.quick-filter').forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeQuickFilter = btn.dataset.filter;
+      renderProducts();
+    });
+  });
+
+  // ====== ANIMATED COUNTERS ======
+  function animateCounter(el, target) {
+    const duration = 1500;
+    const start = performance.now();
+    const startVal = 0;
+    const isFloat = String(target).includes('.');
+    const isPlus = String(target).startsWith('+');
+    const cleanTarget = parseFloat(String(target).replace(/[^\d.]/g, ''));
+
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = startVal + (cleanTarget - startVal) * eased;
+      el.textContent = (isPlus ? '+' : '') +
+        (isFloat ? value.toFixed(1) : Math.floor(value).toLocaleString('ar-MA'));
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = String(target);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function setupCounters() {
+    if (!('IntersectionObserver' in window)) return;
+    const counters = $$('.hero__stats strong');
+    if (!counters.length) return;
+
+    const targets = counters.map((el) => el.textContent.trim());
+    counters.forEach((el) => { el.dataset.target = el.textContent.trim(); el.textContent = '0'; });
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target, entry.target.dataset.target);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach((el) => io.observe(el));
+  }
+  setupCounters();
 
   // ====== CART ======
   const cartBtn = $('#cartBtn');

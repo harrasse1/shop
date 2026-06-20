@@ -38,9 +38,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="assets/css/style.css?v=10" />
+  <link rel="stylesheet" href="assets/css/style.css?v=11" />
 
   <link rel="icon" type="image/svg+xml" href="assets/images/logo-icon.svg?v=2" />
+
+  <!-- PWA Manifest (allows users to install site as an app) -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="HARRASSE" />
+  <link rel="apple-touch-icon" href="assets/images/logo-icon.svg" />
 
   <!-- Structured data for SEO -->
   <script type="application/ld+json">
@@ -255,6 +262,21 @@
             <option value="price-desc">السعر: من الأعلى للأقل</option>
             <option value="name">حسب الاسم</option>
           </select>
+        </div>
+
+        <div class="quick-filters" id="quickFilters">
+          <button class="quick-filter active" data-filter="all">
+            <i class="fas fa-th"></i> الكل
+          </button>
+          <button class="quick-filter" data-filter="best">
+            <i class="fas fa-fire"></i> الأكثر مبيعاً
+          </button>
+          <button class="quick-filter" data-filter="new">
+            <i class="fas fa-bolt"></i> جديد
+          </button>
+          <button class="quick-filter" data-filter="discount">
+            <i class="fas fa-tag"></i> في تخفيض
+          </button>
         </div>
       </div>
 
@@ -551,7 +573,7 @@
   </div>
 
   <!-- Scripts -->
-  <script src="assets/js/products.js?v=10"></script>
-  <script src="assets/js/app.js?v=10"></script>
+  <script src="assets/js/products.js?v=11"></script>
+  <script src="assets/js/app.js?v=11"></script>
 </body>
 </html>
