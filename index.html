@@ -494,6 +494,19 @@
     </div>
   </footer>
 
+  <!-- ============ PWA INSTALL BANNER ============ -->
+  <div class="pwa-banner" id="pwaBanner" hidden>
+    <div class="pwa-banner__inner">
+      <img src="assets/images/logo-icon.svg" alt="HARRASSE" class="pwa-banner__icon" />
+      <div class="pwa-banner__text">
+        <strong>ثبّت تطبيق HARRASSE.SHOP</strong>
+        <span>وصول سريع بدون متصفح + يعمل بدون إنترنت</span>
+      </div>
+      <button class="pwa-banner__btn" id="pwaInstallBtn">تثبيت</button>
+      <button class="pwa-banner__close" id="pwaCloseBtn" aria-label="إغلاق">✕</button>
+    </div>
+  </div>
+
   <!-- ============ FLOATING WHATSAPP ============ -->
   <a href="https://wa.me/212691805347?text=مرحباً، أريد الاستفسار عن منتج من HARRASSE.SHOP" class="fab-whatsapp" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
     <i class="fab fa-whatsapp"></i>
@@ -561,10 +574,69 @@
   <script src="assets/js/products.js?v=20"></script>
   <script src="assets/js/app.js?v=20"></script>
   <script>
-    // Register Service Worker for PWA install prompt
+    // Register Service Worker
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js').catch(() => {});
     }
+
+    // PWA Install Banner Logic
+    (function() {
+      let deferredPrompt = null;
+      const banner = document.getElementById('pwaBanner');
+      const installBtn = document.getElementById('pwaInstallBtn');
+      const closeBtn = document.getElementById('pwaCloseBtn');
+
+      // Check if already installed or dismissed
+      const isInstalled = window.matchMedia('(display-mode: standalone)').matches;
+      const isDismissed = localStorage.getItem('pwa_dismissed');
+
+      if (isInstalled || isDismissed) return;
+
+      // Listen for the browser's install prompt
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        banner.hidden = false;
+      });
+
+      // If browser doesn't fire beforeinstallprompt (iOS, etc.), show banner after 3 seconds
+      setTimeout(() => {
+        if (!deferredPrompt && !isInstalled && !isDismissed) {
+          banner.hidden = false;
+        }
+      }, 3000);
+
+      // Install button click
+      if (installBtn) {
+        installBtn.addEventListener('click', async () => {
+          if (deferredPrompt) {
+            deferredPrompt.prompt();
+            const result = await deferredPrompt.userChoice;
+            if (result.outcome === 'accepted') {
+              banner.hidden = true;
+            }
+            deferredPrompt = null;
+          } else {
+            // iOS/Safari: show instructions
+            alert('لتثبيت التطبيق:\n\n📱 iPhone: اضغط على زر المشاركة ↑ ثم "إضافة إلى الشاشة الرئيسية"\n\n📱 Android: اضغط على ⋮ ثم "إضافة إلى الشاشة الرئيسية"');
+          }
+        });
+      }
+
+      // Close button
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          banner.hidden = true;
+          localStorage.setItem('pwa_dismissed', '1');
+        });
+      }
+
+      // Hide if app gets installed
+      window.addEventListener('appinstalled', () => {
+        banner.hidden = true;
+        deferredPrompt = null;
+      });
+    })();
   </script>
 </body>
 </html>
