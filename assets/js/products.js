@@ -42,7 +42,7 @@ const PRODUCTS = [
   },
   {
     id: 'forever-freedom',
-    image: 'assets/images/forever-freedom.webp',
+    image: 'assets/images/forever-freedom.svg',
     name: 'Forever Freedom',
     cat: 'drinks',
     catName: 'مشروبات الصبار',
@@ -54,7 +54,7 @@ const PRODUCTS = [
   },
   {
     id: 'pomesteen-power',
-    image: 'assets/images/pomesteen-power.webp',
+    image: 'assets/images/pomesteen-power.svg',
     name: 'Pomesteen Power',
     cat: 'drinks',
     catName: 'مشروبات الصبار',
@@ -68,7 +68,7 @@ const PRODUCTS = [
   /* ============== المكملات الغذائية (NUTRITION) ============== */
   {
     id: 'forever-arctic-sea',
-    image: 'assets/images/forever-arctic-sea.webp',
+    image: 'assets/images/forever-arctic-sea.svg',
     name: 'Forever Arctic Sea',
     cat: 'nutrition',
     catName: 'المكملات الغذائية',
@@ -80,7 +80,7 @@ const PRODUCTS = [
   },
   {
     id: 'forever-daily',
-    image: 'assets/images/forever-daily.webp',
+    image: 'assets/images/forever-daily.svg',
     name: 'Forever Daily',
     cat: 'nutrition',
     catName: 'المكملات الغذائية',
@@ -128,7 +128,7 @@ const PRODUCTS = [
   },
   {
     id: 'forever-calcium',
-    image: 'assets/images/forever-calcium.webp',
+    image: 'assets/images/forever-calcium.svg',
     name: 'Forever Calcium',
     cat: 'nutrition',
     catName: 'المكملات الغذائية',
@@ -188,7 +188,7 @@ const PRODUCTS = [
   },
   {
     id: 'forever-bee-honey',
-    image: 'assets/images/forever-bee-honey.webp',
+    image: 'assets/images/forever-bee-honey.svg',
     name: 'Forever Bee Honey',
     cat: 'bee',
     catName: 'منتجات النحل',
@@ -202,7 +202,7 @@ const PRODUCTS = [
   /* ============== العناية بالبشرة (SKINCARE) ============== */
   {
     id: 'sonya-aloe-purifying-cleanser',
-    image: 'assets/images/sonya-aloe-purifying-cleanser.webp',
+    image: 'assets/images/sonya-aloe-purifying-cleanser.svg',
     name: 'Sonya Aloe Purifying Cleanser',
     cat: 'skincare',
     catName: 'العناية بالبشرة',
@@ -214,7 +214,7 @@ const PRODUCTS = [
   },
   {
     id: 'sonya-refreshing-toner',
-    image: 'assets/images/sonya-refreshing-toner.webp',
+    image: 'assets/images/sonya-refreshing-toner.svg',
     name: 'Sonya Refreshing Toner',
     cat: 'skincare',
     catName: 'العناية بالبشرة',
@@ -226,7 +226,7 @@ const PRODUCTS = [
   },
   {
     id: 'sonya-soothing-gel',
-    image: 'assets/images/sonya-soothing-gel.webp',
+    image: 'assets/images/sonya-soothing-gel.svg',
     name: 'Sonya Soothing Gel',
     cat: 'skincare',
     catName: 'العناية بالبشرة',
@@ -238,7 +238,7 @@ const PRODUCTS = [
   },
   {
     id: 'sonya-aloe-balancing-cream',
-    image: 'assets/images/sonya-aloe-balancing-cream.webp',
+    image: 'assets/images/sonya-aloe-balancing-cream.svg',
     name: 'Sonya Balancing Cream',
     cat: 'skincare',
     catName: 'العناية بالبشرة',
@@ -250,7 +250,7 @@ const PRODUCTS = [
   },
   {
     id: 'forever-aloe-scrub',
-    image: 'assets/images/forever-aloe-scrub.webp',
+    image: 'assets/images/forever-aloe-scrub.svg',
     name: 'Forever Aloe Scrub',
     cat: 'skincare',
     catName: 'العناية بالبشرة',
@@ -262,7 +262,7 @@ const PRODUCTS = [
   },
   {
     id: 'forever-aloe-bio-cellulose-mask',
-    image: 'assets/images/forever-aloe-bio-cellulose-mask.webp',
+    image: 'assets/images/forever-aloe-bio-cellulose-mask.svg',
     name: 'Aloe Bio-Cellulose Mask',
     cat: 'skincare',
     catName: 'العناية بالبشرة',
@@ -274,7 +274,7 @@ const PRODUCTS = [
   },
   {
     id: 'forever-marine-mask',
-    image: 'assets/images/forever-marine-mask.webp',
+    image: 'assets/images/forever-marine-mask.svg',
     name: 'Forever Marine Mask',
     cat: 'skincare',
     catName: 'العناية بالبشرة',
@@ -286,7 +286,7 @@ const PRODUCTS = [
   },
   {
     id: 'r3-factor',
-    image: 'assets/images/r3-factor.webp',
+    image: 'assets/images/r3-factor.svg',
     name: 'R3 Factor Skin Defense',
     cat: 'skincare',
     catName: 'العناية بالبشرة',
@@ -298,7 +298,7 @@ const PRODUCTS = [
   },
   {
     id: 'aloe-fleur-de-jouvence',
-    image: 'assets/images/aloe-fleur-de-jouvence.webp',
+    image: 'assets/images/aloe-fleur-de-jouvence.svg',
     name: 'Aloe Fleur de Jouvence',
     cat: 'skincare',
     catName: 'العناية بالبشرة',
@@ -372,7 +372,7 @@ const PRODUCTS = [
   },
   {
     id: 'forever-fiber',
-    image: 'assets/images/forever-fiber.webp',
+    image: 'assets/images/forever-fiber.svg',
     name: 'Forever Fiber',
     cat: 'weight',
     catName: 'التخسيس والريجيم',
@@ -384,7 +384,7 @@ const PRODUCTS = [
   },
   {
     id: 'garcinia-plus',
-    image: 'assets/images/garcinia-plus.webp',
+    image: 'assets/images/garcinia-plus.svg',
     name: 'Forever Garcinia Plus',
     cat: 'weight',
     catName: 'التخسيس والريجيم',
@@ -420,7 +420,7 @@ const PRODUCTS = [
   },
   {
     id: 'vital5',
-    image: 'assets/images/vital5.webp',
+    image: 'assets/images/vital5.svg',
     name: 'برنامج Vital 5',
     cat: 'weight',
     catName: 'التخسيس والريجيم',
@@ -458,7 +458,7 @@ const PRODUCTS = [
   },
   {
     id: 'aloe-bath-gelee',
-    image: 'assets/images/aloe-bath-gelee.webp',
+    image: 'assets/images/aloe-bath-gelee.svg',
     name: 'Aloe Bath Gelée',
     cat: 'personal',
     catName: 'العناية الشخصية',
@@ -482,7 +482,7 @@ const PRODUCTS = [
   },
   {
     id: 'aloe-jojoba-conditioner',
-    image: 'assets/images/aloe-jojoba-conditioner.webp',
+    image: 'assets/images/aloe-jojoba-conditioner.svg',
     name: 'Aloe-Jojoba Conditioning Rinse',
     cat: 'personal',
     catName: 'العناية الشخصية',
@@ -506,7 +506,7 @@ const PRODUCTS = [
   },
   {
     id: 'aloe-deep-cleansing',
-    image: 'assets/images/aloe-deep-cleansing.webp',
+    image: 'assets/images/aloe-deep-cleansing.svg',
     name: 'Aloe Deep Cleansing Body Wash',
     cat: 'personal',
     catName: 'العناية الشخصية',
@@ -580,7 +580,7 @@ const PRODUCTS = [
   /* ============== العطور (PERFUMES) ============== */
   {
     id: '25th-edition-women',
-    image: 'assets/images/25th-edition-women.webp',
+    image: 'assets/images/25th-edition-women.svg',
     name: '25th Edition للنساء',
     cat: 'perfumes',
     catName: 'العطور',
@@ -592,7 +592,7 @@ const PRODUCTS = [
   },
   {
     id: '25th-edition-men',
-    image: 'assets/images/25th-edition-men.webp',
+    image: 'assets/images/25th-edition-men.svg',
     name: '25th Edition للرجال',
     cat: 'perfumes',
     catName: 'العطور',

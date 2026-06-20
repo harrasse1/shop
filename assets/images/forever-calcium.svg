@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fafbfa"/>
+      <stop offset="100%" stop-color="#eef2ee"/>
+    </linearGradient>
+    <linearGradient id="prod" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#37474f"/>
+      <stop offset="100%" stop-color="#273237"/>
+    </linearGradient>
+    <linearGradient id="prodDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2f3c43"/>
+      <stop offset="100%" stop-color="#1e272b"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="8"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.25"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <ellipse cx="200" cy="370" rx="100" ry="10" fill="#000" opacity="0.12"/>
+  <g filter="url(#shadow)">
+    <rect x="160" y="55" width="80" height="36" rx="6" fill="#1e272b"/>
+    <rect x="160" y="62" width="80" height="3" fill="#161c20" opacity="0.5"/>
+    <rect x="160" y="77" width="80" height="3" fill="#161c20" opacity="0.5"/>
+    <path d="M 150 100 L 150 330 Q 150 345, 165 345 L 235 345 Q 250 345, 250 330 L 250 100 Z" fill="url(#prod)"/>
+    <rect x="158" y="150" width="84" height="140" fill="#fff" opacity="0.95"/>
+    <text x="200" y="180" text-anchor="middle" fill="#1c2428" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2">FOREVER</text>
+    <line x1="170" y1="190" x2="230" y2="190" stroke="#37474f" stroke-width="1.2"/>
+    <text x="200" y="220" text-anchor="middle" fill="#37474f" font-family="Arial Black,sans-serif" font-size="16" font-weight="900">CALCIUM</text>
+    <text x="200" y="245" text-anchor="middle" fill="#273237" font-family="Arial,sans-serif" font-size="10" font-style="italic">Bone Health</text>
+    <circle cx="200" cy="270" r="14" fill="none" stroke="#37474f" stroke-width="1.5"/>
+    <text x="200" y="275" text-anchor="middle" fill="#37474f" font-family="Arial,sans-serif" font-size="11" font-weight="700">60</text>
+  </g>
+</svg>

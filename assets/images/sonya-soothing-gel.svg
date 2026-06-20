@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fafbfa"/>
+      <stop offset="100%" stop-color="#eef2ee"/>
+    </linearGradient>
+    <linearGradient id="prod" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7eb09b"/>
+      <stop offset="100%" stop-color="#587b6d"/>
+    </linearGradient>
+    <linearGradient id="prodDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6b9684"/>
+      <stop offset="100%" stop-color="#456155"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="8"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.25"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <ellipse cx="200" cy="370" rx="100" ry="10" fill="#000" opacity="0.12"/>
+  <g filter="url(#shadow)">
+    <ellipse cx="200" cy="80" rx="14" ry="6" fill="#3f584e"/>
+    <rect x="186" y="74" width="28" height="20" fill="#3f584e"/>
+    <ellipse cx="200" cy="94" rx="14" ry="3" fill="#4c6a5d"/>
+    <path d="M 165 100 L 235 100 L 245 320 Q 245 345, 220 345 L 180 345 Q 155 345, 155 320 Z" fill="url(#prod)"/>
+    <rect x="170" y="155" width="60" height="160" fill="#fff" opacity="0.95"/>
+    <text x="200" y="185" text-anchor="middle" fill="#3f584e" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1.5">FOREVER</text>
+    <line x1="178" y1="195" x2="222" y2="195" stroke="#fff" stroke-width="0.8"/>
+    <text x="200" y="225" text-anchor="middle" fill="#7eb09b" font-family="Arial Black,sans-serif" font-size="13" font-weight="900">SONYA</text>
+    <text x="200" y="248" text-anchor="middle" fill="#658d7c" font-family="Arial,sans-serif" font-size="9">Soothing Gel</text>
+    <text x="200" y="295" text-anchor="middle" fill="#4c6a5d" font-family="Arial,sans-serif" font-size="8" font-style="italic">100ml</text>
+  </g>
+</svg>
