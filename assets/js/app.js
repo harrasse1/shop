@@ -97,18 +97,25 @@
     return `<span class="product__badge">-${pct}%</span>`;
   }
 
-  function productCard(p) {
+  function productCard(p, index = 0) {
     const bg = `linear-gradient(135deg, ${p.color || '#1a6b4e'} 0%, rgba(0,0,0,.35) 100%)`;
+    // Priority: first 4 products = high priority, rest = lazy + low priority
+    const isPriority = index < 4;
     const imageContent = p.image
-      ? `<img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" /><div class="product__img-fallback" style="display:none; background: ${bg};"><i class="fas ${p.icon}"></i></div>`
+      ? `<img src="${p.image}" alt="${p.name}" 
+           ${isPriority ? 'fetchpriority="high"' : 'loading="lazy" decoding="async" fetchpriority="low"'}
+           width="280" height="220"
+           onload="this.classList.add('loaded');"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+         <div class="product__img-fallback" style="display:none; background: ${bg};"><i class="fas ${p.icon}"></i></div>`
       : `<i class="fas ${p.icon}"></i>`;
     const imgStyle = p.image
-      ? 'background: #ffffff;'
+      ? 'background: #f7faf8;'
       : `background: ${bg};`;
     return `
       <article class="product" data-cat="${p.cat}" data-name="${p.name.toLowerCase()}" data-price="${p.price}">
         ${p.badge ? getBadge(p.badge) : getDiscount(p)}
-        <div class="product__img" style="${imgStyle}">
+        <div class="product__img ${p.image ? 'product__img--has-photo' : ''}" style="${imgStyle}">
           ${imageContent}
         </div>
         <div class="product__body">
@@ -154,7 +161,7 @@
       return;
     }
     emptyState && (emptyState.hidden = true);
-    grid.innerHTML = list.map(productCard).join('');
+    grid.innerHTML = list.map((p, i) => productCard(p, i)).join('');
     bindProductButtons();
   }
 
@@ -410,6 +417,28 @@
   // ====== YEAR ======
   const yearEl = $('#year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // ====== SCROLL TO TOP BUTTON ======
+  const scrollTopBtn = $('#scrollTopBtn');
+  if (scrollTopBtn) {
+    const toggleScrollBtn = () => {
+      scrollTopBtn.classList.toggle('show', window.scrollY > 600);
+    };
+    window.addEventListener('scroll', toggleScrollBtn, { passive: true });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // ====== PAGE LOADER ======
+  // Hide loader once everything is ready
+  window.addEventListener('load', () => {
+    const loader = $('#pageLoader');
+    if (loader) {
+      loader.classList.add('hidden');
+      setTimeout(() => loader.remove(), 500);
+    }
+  });
 
   // ====== INIT ======
   renderProducts();

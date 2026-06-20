@@ -5,26 +5,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0b3d2e" />
   <meta name="description" content="HARRASSE.SHOP - وكيل معتمد لمنتجات فوريفر ليفينج. منتجات أصلية 100% بأفضل الأسعار. توصيل لجميع المناطق." />
-  <meta name="keywords" content="فوريفر, Forever Living, الصبار, الألوفيرا, منتجات طبيعية, HARRASSE" />
+  <meta name="keywords" content="فوريفر, Forever Living, الصبار, الألوفيرا, منتجات طبيعية, HARRASSE, C9, Aloe Vera" />
+  <meta name="author" content="HARRASSE.SHOP" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph (للمشاركة في فيسبوك/واتساب) -->
   <meta property="og:title" content="HARRASSE.SHOP - منتجات فوريفر الأصلية" />
-  <meta property="og:description" content="جميع منتجات فوريفر ليفينج الأصلية بأفضل الأسعار - HARRASSE.SHOP" />
+  <meta property="og:description" content="جميع منتجات فوريفر ليفينج الأصلية بأفضل الأسعار - توصيل لجميع المدن" />
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ar_AR" />
+  <meta property="og:image" content="assets/images/logo.svg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HARRASSE.SHOP - منتجات فوريفر الأصلية" />
+  <meta name="twitter:description" content="جميع منتجات فوريفر ليفينج الأصلية" />
+
   <title>HARRASSE.SHOP | منتجات فوريفر ليفينج الأصلية</title>
 
-  <!-- Google Fonts -->
+  <!-- Preconnect to external resources for faster loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+  <!-- Preload critical above-the-fold image -->
+  <link rel="preload" as="image" href="assets/images/aloe-vera-gel.webp" fetchpriority="high" />
+
+  <!-- Google Fonts (display=swap to avoid FOIT) -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="assets/css/style.css?v=7" />
+  <link rel="stylesheet" href="assets/css/style.css?v=8" />
 
   <link rel="icon" type="image/svg+xml" href="assets/images/logo-icon.svg?v=2" />
+
+  <!-- Structured data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "HARRASSE.SHOP",
+    "description": "وكيل معتمد لمنتجات فوريفر ليفينج",
+    "url": "https://mohamedharrasse3-boop.github.io/HARRASSE/",
+    "telephone": "+212691805347",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "MA"
+    }
+  }
+  </script>
 </head>
 <body>
+
+  <!-- ============ PAGE LOADER ============ -->
+  <div class="page-loader" id="pageLoader">
+    <div class="page-loader__inner">
+      <div class="page-loader__logo">
+        <span class="page-loader__h">H</span>
+      </div>
+      <div class="page-loader__spinner"></div>
+      <p>جاري تحميل HARRASSE.SHOP...</p>
+    </div>
+  </div>
 
   <!-- ============ TOP BAR ============ -->
   <div class="topbar">
@@ -102,7 +147,12 @@
           <div class="hero__badge"><i class="fas fa-fire"></i> الأكثر مبيعاً</div>
           <div class="hero__product">
             <div class="hero__product-img hero__product-img--photo">
-              <img src="assets/images/aloe-vera-gel.webp" alt="Forever Aloe Vera Gel" loading="lazy" />
+              <img src="assets/images/aloe-vera-gel.webp" 
+                   alt="Forever Aloe Vera Gel" 
+                   width="350" height="240"
+                   fetchpriority="high"
+                   decoding="async"
+                   onload="this.classList.add('loaded');" />
             </div>
             <h3>Forever Aloe Vera Gel</h3>
             <p>عصير الصبار الأصلي 99.7% — كنز الطبيعة لصحة جهازك الهضمي ومناعتك</p>
@@ -444,6 +494,11 @@
     <span class="fab-pulse"></span>
   </a>
 
+  <!-- ============ SCROLL TO TOP ============ -->
+  <button class="scroll-top" id="scrollTopBtn" aria-label="العودة للأعلى">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
   <!-- ============ CART DRAWER ============ -->
   <div class="drawer" id="cartDrawer" aria-hidden="true">
     <div class="drawer__overlay" data-close></div>
@@ -471,7 +526,7 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <!-- Scripts -->
-  <script src="assets/js/products.js?v=7"></script>
-  <script src="assets/js/app.js?v=7"></script>
+  <script src="assets/js/products.js?v=8"></script>
+  <script src="assets/js/app.js?v=8"></script>
 </body>
 </html>
