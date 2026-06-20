@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="assets/css/style.css?v=9" />
+  <link rel="stylesheet" href="assets/css/style.css?v=10" />
 
   <link rel="icon" type="image/svg+xml" href="assets/images/logo-icon.svg?v=2" />
 
@@ -524,8 +524,34 @@
   <!-- ============ TOAST ============ -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox__overlay" data-close></div>
+    <div class="lightbox__content">
+      <button class="lightbox__close" data-close aria-label="إغلاق">
+        <i class="fas fa-xmark"></i>
+      </button>
+      <div class="lightbox__image-wrap">
+        <img id="lightboxImg" src="" alt="" />
+      </div>
+      <div class="lightbox__info">
+        <h3 class="lightbox__name" id="lightboxName"></h3>
+        <p class="lightbox__desc" id="lightboxDesc"></p>
+        <div class="lightbox__price" id="lightboxPrice"></div>
+        <div class="lightbox__actions">
+          <button class="btn btn-primary" id="lightboxAdd" data-id="">
+            <i class="fas fa-cart-plus"></i> أضف إلى السلة
+          </button>
+          <button class="btn btn-ghost" id="lightboxShare">
+            <i class="fab fa-whatsapp"></i> مشاركة
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
-  <script src="assets/js/products.js?v=9"></script>
-  <script src="assets/js/app.js?v=9"></script>
+  <script src="assets/js/products.js?v=10"></script>
+  <script src="assets/js/app.js?v=10"></script>
 </body>
 </html>
