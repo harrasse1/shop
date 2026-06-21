@@ -102,6 +102,10 @@
       </nav>
 
       <div class="header__actions">
+        <button class="btn-install" id="btnInstall" aria-label="تثبيت التطبيق" hidden>
+          <i class="fas fa-download"></i>
+          <span>تثبيت</span>
+        </button>
         <button class="btn-icon cart-btn" id="cartBtn" aria-label="سلة التسوق">
           <i class="fas fa-bag-shopping"></i>
           <span class="cart-badge" id="cartBadge">0</span>
@@ -565,6 +569,45 @@
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js').catch(() => {});
     }
+
+    // PWA Install: show install button in header when available
+    (function() {
+      let deferredPrompt = null;
+      const btn = document.getElementById('btnInstall');
+      if (!btn) return;
+
+      // Already installed?
+      const isInstalled = window.matchMedia('(display-mode: standalone)').matches
+                       || window.navigator.standalone;
+      if (isInstalled) return;
+
+      // Capture Chrome's install prompt event
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        btn.hidden = false;
+      });
+
+      // User clicks install button
+      btn.addEventListener('click', async () => {
+        if (!deferredPrompt) {
+          alert('📱 لإضافة الموقع إلى الشاشة الرئيسية:\n\n• Chrome (Android): اضغط على ⋮ ثم "إضافة إلى الشاشة الرئيسية"\n\n• Safari (iPhone): اضغط على زر المشاركة ↑ ثم "إضافة إلى الشاشة الرئيسية"');
+          return;
+        }
+        deferredPrompt.prompt();
+        const result = await deferredPrompt.userChoice;
+        if (result.outcome === 'accepted') {
+          btn.hidden = true;
+        }
+        deferredPrompt = null;
+      });
+
+      // Hide after install
+      window.addEventListener('appinstalled', () => {
+        btn.hidden = true;
+        deferredPrompt = null;
+      });
+    })();
   </script>
 </body>
 </html>
