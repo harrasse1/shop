@@ -1,5 +1,5 @@
 // HARRASSE.SHOP Service Worker
-const CACHE_NAME = 'harrasse-v1';
+const CACHE_NAME = 'harrasse-v2';
 
 // Install: cache essential files
 self.addEventListener('install', (event) => {
